@@ -7,7 +7,7 @@ I don't expect anyone to use this, but if it's helpful or it sucks, let me know 
 ## Summary
 A tool used to download LLama models from Hugging Face for local use.
 
-##Usage
+## Usage
 
 Download the hf_downloader script and put it anywhere that works for you.
 
