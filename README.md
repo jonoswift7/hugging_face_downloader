@@ -4,6 +4,8 @@
 
 I don't expect anyone to use this, but if it's helpful or it sucks, let me know :)
 
+The models downloaded this way can be converted with Llama.cpp for easy use with LangChain and other local llm solutions.
+
 ## Summary
 A tool used to download LLama models from Hugging Face for local use.
 
