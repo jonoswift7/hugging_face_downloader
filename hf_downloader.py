@@ -13,8 +13,7 @@ model_number = ""
 
 
 if len(sys.argv) < 2:
-    #"tokyotech-llm/Swallow-7b-instruct-hf",
-    base_links = ["tokyotech-llm/Swallow-7b-instruct-hf"]
+    base_links = ["tokyotech-llm/Swallow-7b-instruct-hf"] #, "tokyotech-llm/Swallow-13b-instruct-hf", "tokyotech-llm/Swallow-70b-instruct-hf"]
 else:
     base_links = sys.argv[1:]
 
@@ -25,7 +24,6 @@ for base_link in base_links:
 
     base_url = f"https://huggingface.co/{base_link}"
     tree_url = base_url + "/tree/main"
-
 
     result = subprocess.run(["curl", "-s", tree_url], capture_output=True, text=True)
     html_data = result.stdout
@@ -89,8 +87,12 @@ for base_link in base_links:
 
     # download each target, using the url to extract the file name.
     for url in tqdm(files_to_download, desc="Downloading model files"):
-        print (url)
-        filename = os.path.basename(url).split("?")[0]
-        full_path = os.path.join(dir, filename)
-
-        wget.download(url, full_path)
+       
+       filename = os.path.basename(url).split("?")[0]
+       full_path = os.path.join(dir, filename)
+       
+       if not os.path.exists(full_path):
+            print (f"Downloading: \n{url}")
+            wget.download(url, full_path)
+       else:
+           print (f"File {full_path} already exists.")
