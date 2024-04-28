@@ -46,8 +46,6 @@ for base_link in base_links:
     if not os.path.exists(dir):
         os.makedirs(dir)
 
-    #print (f"Number of models detected as: {model_total[-2:]}")
-
     # get the last two digits from our total, this is to ensure
     # that we get both single digit (01->09) and double digit (10+) values correctly
     print ("Discovering model files...")
