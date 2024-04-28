@@ -13,7 +13,7 @@ model_number = ""
 
 
 if len(sys.argv) < 2:
-    base_links = ["tokyotech-llm/Swallow-7b-instruct-hf"] #, "tokyotech-llm/Swallow-13b-instruct-hf", "tokyotech-llm/Swallow-70b-instruct-hf"]
+    base_links = ["tokyotech-llm/Swallow-7b-instruct-hf", "tokyotech-llm/Swallow-13b-instruct-hf", "tokyotech-llm/Swallow-70b-instruct-hf"]
 else:
     base_links = sys.argv[1:]
 
